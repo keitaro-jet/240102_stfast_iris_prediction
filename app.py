@@ -26,7 +26,8 @@ if st.sidebar.button("Predict"):
     st.write(iris_df)
 
     # 予測の実行
-    response = requests.post("http://localhost:8000/predict", json=iris)
+    # response = requests.post("http://localhost:8000/predict", json=iris)
+    response = requests.post("https://st-fast-iris-prediction.onrender.com/predict", json=iris)
     prediction = response.json()["prediction"]
 
     # 予測結果の表示
